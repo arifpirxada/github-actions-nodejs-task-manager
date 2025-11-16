@@ -27,7 +27,9 @@ router.post('/signup', async (req, res) => {
     })
     res.status(201).json({ message: 'Insertion successful' })
   } catch (e) {
-    console.log(e)
+    if (process.env.NODE_ENV !== 'test') {
+      console.log(e)
+    }
     if (e.code === 11000 && e.keyPattern && e.keyPattern.email) {
       res.status(400).json({ message: 'Email already exists' })
     } else {

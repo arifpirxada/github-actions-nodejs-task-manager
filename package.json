@@ -4,7 +4,7 @@
   "description": "Crud application using Node.js",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon src/server.js",
     "format": "prettier --write ./src",
     "format:check": "prettier --check ./src",
@@ -26,6 +26,8 @@
     "@eslint/js": "^9.39.1",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
-    "prettier": "^3.6.2"
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "supertest": "^7.1.4"
   }
 }
