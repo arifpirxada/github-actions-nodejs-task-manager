@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Notes</title>
+</head>
+
+<link rel="stylesheet" href="css/boot/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="icon" href="img/logo.png" type="image/x-icon">
+
+<body>
+
+    {{>navbar}}
+
+    <!-- Notes Accordian and Add Notes Start Here -->
+
+    <div id="fetch-spinner" class="d-flex justify-content-center d-none">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div class="noteAddContainer">
+        <!-- Notes Here -->
+        <div class="accordion taskContainer" id="accordionExample">
+            <h1 id="taskHead">Hey !&nbsp; Your Tasks Here</h1>
+            <p id="noData">No Tasks To show</p>
+            <div id="defaultAccordion" class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Task Heading will be here
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Description will be here. Add tasks and make your life easy with MyTasker.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Notes Here -->
+
+        <div class="addNoteContainer">
+            <div>
+                <div class="mb-3">
+                    <label for="taskTitle" class="form-label">Task Title</label>
+                    <input type="text" class="form-control" id="taskTitle" name="taskTitle" placeholder="Name your task"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="taskDesc" class="form-label">Description</label>
+                    <textarea class="form-control" id="taskDesc" name="taskDesc"
+                        placeholder="Describe your task"></textarea>
+                </div>
+
+                <p id="taskAlert">Add your tasks here</p>
+                <div class="flex-c">
+                    <button onclick="operTask('add', event)" class="btn btn-warning addTaskBtn">Add Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Editing Modal Here --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update your Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="updateTitle" class="form-label">Task Title</label>
+                        <input type="text" class="form-control" id="updateTitle" name="updateTitle"
+                            placeholder="Name your task" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateDesc" class="form-label">Description</label>
+                        <textarea class="form-control" id="updateDesc" name="updateDesc"
+                            placeholder="Describe your task"></textarea>
+                    </div>
+                    <input type="hidden" id="taskId">
+                    <input type="hidden" id="taskBtn">
+
+                    <p id="editTaskAlert" style="text-align: center;">Update your tasks here</p>
+                    <div class="flex-c">
+                        <button onclick="operEdit('edit', this)" class="btn btn-warning addTaskBtn">Update</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="close-modal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="js/bootJs/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
