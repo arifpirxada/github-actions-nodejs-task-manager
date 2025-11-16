@@ -26,40 +26,40 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository to your local machine:
 
-    ```bash
-    git clone git@github.com:arifpirxada/nodejs-task-manager.git
-    ```
+   ```bash
+   git clone git@github.com:arifpirxada/nodejs-task-manager.git
+   ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd nodejs-task-manager
-    ```
+   ```bash
+   cd nodejs-task-manager
+   ```
 
 3. Install the project dependencies:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 4. Create a `.env` file in the project root and configure the following environment variable:
 
-    ```env
-    MONGODB_URL=           # URL to your MongoDB database
-    JWT_SECRET_KEY=        # Secret key for JWT (JSON Web Tokens)
-    ```
+   ```env
+   MONGODB_URL=           # URL to your MongoDB database
+   JWT_SECRET_KEY=        # Secret key for JWT (JSON Web Tokens)
+   ```
 
 5. change the server url in main.js to localhost:
 
-    ```bash
-    const myTasker = "http://localhost:3000/"
-    ```
+   ```bash
+   const myTasker = "http://localhost:3000/"
+   ```
 
 6. Start the application:
 
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 7. The Task Manager Application should now be running on `http://localhost:3000`.
 
